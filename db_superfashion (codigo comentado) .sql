@@ -104,5 +104,60 @@ SET data_manutencao = '2022-11-17'
 WHERE data_manutencao;
 #Atualizando todas as linhas do Campo "data_manutencao" com o UPDADE! Para atualizar todas as linhas deve desabilitar o recurso "Safe Update Mode"em Preferencias, mas por questao de seguranca é bom deixar ativado =, pois é raro o caso que teremos que atualizar todas as linhas de uma coluna.
 
+DELETE FROM tb_clientes_star
+WHERE id=4;
+#Deletando o Registro com o meu nome da linha 4. (Apaga a linha toda)
+
+TRUNCATE TABLE tb_pagamentos;
+#Truncar manipula todos os dados apagando tudo. (Apaga só os dados, mas mantém a tabela intacta)
+
 SELECT * FROM tb_clientes_star; 
-DESC tb_clientes_star; 
+#Selecione todas as colunas ou campos da tabela "tb_clientes_star" com os seus respectivos registros.
+
+SELECT * FROM tb_clientes_star
+ORDER BY nome;
+#Mostra todos os campos da Tabela "tb_clientes_star" em ordem de acordo com a coluna Nome. (Padrao é em Ordem Crescente A-Z)
+
+SELECT * FROM tb_clientes_star
+ORDER BY nome DESC; 
+#Ordenação em ORDEM DECRESCENTE de acordo com a coluna "Nome".
+
+SELECT nome, data_nascimento, sexo FROM tb_clientes_star
+ORDER BY nome;
+#Mostra somente as Colunas "nome, data_nascimento, sexo" ordenada de forma a-z pela ordenacao de "nome".
+
+SELECT nome, data_nascimento, sexo FROM tb_clientes_star
+WHERE sexo = 'F'
+ORDER BY nome;
+#Mostra somente as Colunas "nome, data_nascimento, sexo" onde o Sexo = 'F' visualizada de forma a-z pela ordenacao de "nome".
+
+SELECT * FROM tb_clientes_star
+WHERE sexo = 'M' and bairro = 'Imperial'
+ORDER BY nome; -- Pode ordenar por mais de um critério Ex: ORDER BY criterio1, criterio2, criterion...;
+#Visualização de todas as colunas da tabela em ORDEM CRESCENTE somente nos registros com o " Sexo = 'M' ".
+
+-- Poderia utilizar no Where caso tivesse, uma classiicacao por ano, daí da necessidade dos operadores para fazer esta comparacao.
+-- Veja alguns exemplos:
+-- WHERE ano > 2022 (Onde ano for maior que 2022)
+-- WHERE ano < 2022 (Onde ano for menor que 2022)
+-- WHERE ano >= 2022 (Onde ano for maior ou igual que 2022)
+-- WHERE ano <= 2022 (Onde ano for menor ou igual que 2022)
+
+# *********************************************************************************************************** #
+-- Operadores Lógicos
+-- Exemplos:
+-- SELECT * FROM nome_tabela
+-- WHERE ano between 2018 and 2022; (Selecione todos os registros da tabela onde o Ano for entre 2018 a 2022) - Intervalo ou Faixa de Dados.
+
+-- Operadores Lógicos
+-- Exemplos:
+-- SELECT * FROM nome_tabela
+-- WHERE ano in (2018, 2019, 2022); (Selecione todos os registros da tabela onde o Ano for 2018, 2019 e 2022)
+
+# *********************************************************************************************************** #
+-- Podemos também misturar os Operadores Relacionais com os Operadores Lógicos dentro do comando WHERE.
+-- Exemplo:
+-- SELECT * FROM nome_tabela
+-- WHERE ano > 2020 and  sexo = 'F'; (Selecione todos os registros da tabela onde o Ano for maior que 2020 e o sexo for F) *As 2 condições precisam ser verdadeiras para mostrar valores no resultado da busca
+
+-- Podemos também utilizar o Operador Lógico OR = OU.
