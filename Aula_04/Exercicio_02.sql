@@ -55,6 +55,6 @@ ON tb_pizzas.categoria_id = tb_categorias.id;
 -- Faça um SELECT utilizando a cláusula INNER JOIN, unindo os dados da tabela tb_pizzas com os dados da tabela tb_categorias, onde traga apenas as pizzas que pertençam a uma categoria específica (Exemplo: Todas as pizzas que são doce).
 SELECT * FROM tb_pizzas INNER JOIN tb_categorias
 ON tb_pizzas.categoria_id = tb_categorias.id
-WHERE sabor = 'Doce Tradicional';
+WHERE sabor = Doce Tradicional';
 
 

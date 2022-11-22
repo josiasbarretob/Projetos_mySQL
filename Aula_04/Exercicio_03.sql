@@ -52,4 +52,4 @@ WHERE nome LIKE '%C%';
 
 -- Faça um SELECT utilizando a cláusula INNER JOIN, unindo os dados da tabela tb_produtos com os dados da tabela tb_categorias.
 select * from tb_produtos inner join tb_categorias 
-on tb_produtos.id_produto = tb_categorias.id_categoria;
+on tb_produtos.categoria_id = tb_categorias.id;
